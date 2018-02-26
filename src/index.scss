@@ -1,0 +1,50 @@
+@import "var";
+@import "resources/fonts/iconfont.css";
+
+html,
+body {
+  height: 100%;
+  background-color: $default-background-color;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: $default-font-color;
+  tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: transparent;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+  background-color: $default-background-color;
+
+  .weui-btn_primary {
+    background-color: $primary-black-color;
+
+    &.weui-btn_disabled {
+      opacity: 0.4;
+    }
+  }
+
+  .weui-cells {
+    font-size: $middle-font-size;
+  }
+
+  .zeus-empty-prompt {
+    text-align: center;
+    margin-top: 60px;
+    font-size: $default-font-size;
+    color: $default-gray5-color;
+  }
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}

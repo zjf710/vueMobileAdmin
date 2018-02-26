@@ -1,0 +1,43 @@
+@import "../../var";
+
+.zeus-home {
+  width: 100%;
+  height: 100%;
+
+  .child-view {
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    transition: all 300ms ease;
+  }
+}
+
+.zeus-menu {
+  padding: 20px 8px;
+
+  .menu-item {
+    display: block;
+    padding: 16px 14px;
+    line-height: 40px;
+    font-size: 16px;
+    background-color: $primary-white-color;
+    box-shadow: $default-box-shadow;
+    margin-bottom: 20px;
+
+    .icon-container {
+      height: 40px;
+      width: 40px;
+      display: inline-block;
+      vertical-align: top;
+      background-color: $primary-black-color;
+      margin-right: 16px;
+      color: $primary-white-color;
+      text-align: center;
+
+      .anticon {
+        font-size: 20px;
+      }
+    }
+  }
+}

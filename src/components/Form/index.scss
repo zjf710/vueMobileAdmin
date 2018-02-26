@@ -1,0 +1,74 @@
+@import "../../var";
+
+.zeus-default-form {
+  .yd-cell-left {
+    width: 20%;
+  }
+
+  .button-container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .form-header {
+    text-align: center;
+    line-height: 50px;
+    background-color: $primary-white-color;
+  }
+
+  .form-warning-text {
+    color: $default-error-color;
+    padding: 10px;
+    background-color: $default-gray-color;
+    font-size: $default-font-size;
+  }
+}
+
+.zeus-cards-form {
+  .yd-cell-left {
+    width: 20%;
+  }
+
+  .button-container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .delete-bar {
+    text-align: right;
+    padding: 6px 15px;
+    border-top: $default-border;
+    font-size: $small-font-size;
+    color: $default-gray4-color;
+    line-height: 22px;
+
+    span {
+      vertical-align: top;
+    }
+  }
+
+  .add-bar {
+    margin-top: 15px;
+    padding: 6px 10px;
+    background-color: $primary-white-color;
+    border-top: $default-border;
+    border-bottom: $default-border;
+
+    .add-container {
+      width: 50px;
+      height: 50px;
+      line-height: 48px;
+      text-align: center;
+      color: $default-gray4-color;
+      border: $default-border;
+
+      .icon-plus {
+        font-size: 28px;
+      }
+    }
+  }
+}
+
+.form-item {
+
+}

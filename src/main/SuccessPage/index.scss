@@ -1,0 +1,27 @@
+@import "../../var";
+
+.zeus-success-page {
+  padding: 15px;
+  background-color: $primary-white-color;
+  text-align: center;
+  height: 100%;
+
+  .anticon {
+    color: $default-success-color;
+    display: inline-block;
+    margin-top: 60px;
+    font-size: 100px;
+  }
+
+  .main-msg {
+    font-size: $large-font-size;
+    margin-top: 30px;
+  }
+
+  .sub-msg {
+    margin-top: 10px;
+    font-size: $default-font-size;
+    color: $default-gray5-color;
+    margin-bottom: 40px;
+  }
+}

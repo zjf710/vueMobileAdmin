@@ -1,0 +1,282 @@
+{
+  "menu": [
+    {
+      "iconName": "retweet",
+      "menuName": "切换路由",
+      "pages": [
+        {
+          "router": "/routers/clients",
+          "title": "客户",
+          "componentList": [
+            {
+              "component": "SearchList",
+              "searchPlaceholder": "请输入公司名称",
+              "url": "/pipeline/index",
+              "linkTo": "/routers/tags"
+            }
+          ]
+        },
+        {
+          "router": "/routers/tags",
+          "title": "Tag",
+          "componentList": [
+            {
+              "component": "SearchGroupList",
+              "searchPlaceholder": "搜索tag",
+              "url": "/tags",
+              "linkTo": "/routers/switchRouter"
+            }
+          ]
+        },
+        {
+          "router": "/routers/switchRouter",
+          "title": "切换路由",
+          "componentList": [
+            {
+              "id": "billInfo",
+              "component": "DefaultForm",
+              "title": "订单信息",
+              "readOnly": true,
+              "getOnly": true,
+              "url": "/pipeline/bill_info",
+              "formItems": [
+                {
+                  "name": "company",
+                  "label": "客户名"
+                },
+                {
+                  "name": "tag",
+                  "label": "TAG"
+                },
+                {
+                  "name": "auth",
+                  "label": "AUTH"
+                },
+                {
+                  "name": "default_pipeline",
+                  "label": "默认路由",
+                  "cellType": "text"
+                },
+                {
+                  "name": "tag_id",
+                  "label": "tag_id",
+                  "hidden": true
+                }
+              ]
+            },
+            {
+              "id": "routesInfo",
+              "component": "FormGroup",
+              "title": "当前请求路由",
+              "url": "/pipeline/routes",
+              "dataBind": [
+                "billInfo"
+              ],
+              "deletable": true,
+              "addable": true,
+              "fixedItemIndex": 0,
+              "buttonText": "切换路由",
+              "successDirect": "successPage",
+              "itemTemplates": [
+                {
+                  "name": "weight",
+                  "required": true,
+                  "type": "number",
+                  "placeholder": "请输入概率",
+                  "label": "概率"
+                },
+                {
+                  "name": "provider",
+                  "required": true,
+                  "cellType": "popupSelector",
+                  "label": "供应商代号"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iconName": "delete",
+      "menuName": "删除缓存",
+      "pages": [
+        {
+          "router": "/cache/filter",
+          "title": "查询条件",
+          "componentList": [
+            {
+              "component": "ZsFilter",
+              "url": "/provider_cache",
+              "formItems": [
+                {
+                  "name": "name",
+                  "label": "姓名",
+                  "placeholder": "请输入姓名"
+                },
+                {
+                  "name": "pid",
+                  "label": "身份证",
+                  "placeholder": "请输入身份证"
+                },
+                {
+                  "name": "mobile",
+                  "label": "手机号",
+                  "type": "number",
+                  "min": 11,
+                  "max": 11,
+                  "placeholder": "请输入手机号"
+                },
+                {
+                  "name": "bank_card",
+                  "label": "银行卡",
+                  "placeholder": "请输入银行卡"
+                },
+                {
+                  "name": "ip",
+                  "label": "IP",
+                  "placeholder": "请输入IP"
+                },
+                {
+                  "name": "tag",
+                  "label": "选择tag",
+                  "required": true,
+                  "placeholder": "请选择tag",
+                  "searchPlaceholder": "请搜索tag",
+                  "cellType": "popupSelector",
+                  "type": "group"
+                }
+              ],
+              "linkTo": "/cache/deleteCache"
+            }
+          ]
+        },
+        {
+          "router": "/cache/deleteCache",
+          "title": "删除缓存",
+          "componentList": [
+            {
+              "component": "CardList",
+              "title": "缓存列表",
+              "url": "/provider_cache",
+              "check": true,
+              "submit": true,
+              "buttonText": "删除"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iconName": "pay-circle-o1",
+      "menuName": "订单充值",
+      "pages": [
+        {
+          "router": "/billRecharge/clients",
+          "title": "客户",
+          "componentList": [
+            {
+              "component": "SearchList",
+              "searchPlaceholder": "请输入公司名称",
+              "url": "/clients",
+              "linkTo": "/billRecharge/authList"
+            }
+          ]
+        },
+        {
+          "router": "/billRecharge/authList",
+          "title": "AUTH",
+          "componentList": [
+            {
+              "component": "CardList",
+              "title": "auth列表",
+              "isLink": true,
+              "url": "/auth_info",
+              "linkTo": "/billRecharge/rechargePage"
+            }
+          ]
+        },
+        {
+          "router": "/billRecharge/rechargePage",
+          "title": "订单充值",
+          "componentList": [
+            {
+              "component": "DefaultForm",
+              "url": "/auth_charge",
+              "successDirect": "successPage",
+              "formItems": [
+                {
+                  "name": "company",
+                  "label": "客户名",
+                  "readOnly": true
+                },
+                {
+                  "name": "auth",
+                  "label": "AUTH",
+                  "readOnly": true
+                },
+                {
+                  "name": "tag",
+                  "label": "TAG",
+                  "cellType": "text"
+                },
+                {
+                  "name": "left_counts",
+                  "label": "剩余次数",
+                  "readOnly": true
+                },
+                {
+                  "name": "charge_counts",
+                  "label": "充值次数",
+                  "type": "number",
+                  "required": true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iconName": "",
+      "menuName": "",
+      "hidden": true,
+      "pages": [{
+        "router": "/routerFastChange",
+        "title": "切换路由",
+        "componentList": [
+          {
+            "component": "DefaultForm",
+            "url": "/pipeline_switch",
+            "successDirect": "successPage",
+            "buttonText": "确认切换",
+            "formHeader": "请确认信息",
+            "warning": "注意：切换将会变更该TAG的所有路由，包括默认路由及订单路由，请仔细确认",
+            "formItems": [
+              {
+                "name": "current_provider",
+                "label": "当前供应商",
+                "cellType": "cell"
+              },
+              {
+                "name": "tag",
+                "label": "调用的TAG",
+                "cellType": "cell"
+              },
+              {
+                "name": "rule",
+                "label": "切换规则",
+                "cellType": "cell"
+              },
+              {
+                "name": "alternate_provider",
+                "label": "建议切换至供应商",
+                "cellType": "cell"
+              }
+            ]
+          }
+        ]
+      }]
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+@import "../../var";
+
+.zeus-sidebar {
+  position: relative;
+
+  .zeus-header {
+    position: relative;
+    background-color: $primary-black-color;
+    height: 42px;
+    line-height: 42px;
+    box-sizing: content-box;
+    text-align: center;
+    color: $primary-white-color;
+    font-weight: bold;
+    font-size: $middle-font-size;
+
+    .anticon {
+      position: absolute;
+      left: 0;
+      padding: 0 12px;
+      font-weight: normal;
+    }
+  }
+
+  .ios-header-top {
+    /* Status bar height on iOS 10 */
+    padding-top: 20px;
+    /* Status bar height on iOS 11 */
+    padding-top: constant(safe-area-inset-top);
+    /* Status bar height on iOS 11+ */
+    padding-top: env(safe-area-inset-top);
+  }
+}

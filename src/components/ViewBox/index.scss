@@ -1,0 +1,13 @@
+@import "../../var";
+
+.zeus-view-box {
+  display: flex;
+  flex-direction: column;
+
+  .view-box-body {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+  }
+}
